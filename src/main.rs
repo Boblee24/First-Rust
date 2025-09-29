@@ -24,6 +24,10 @@ fn main() {
     let slice : &str = &letters[0..4];
     println!("Sliced shit: {}", slice);
     human_id("Ayomiposi", 21, 178.2);
+    let s1 = String::from("RUST"); 
+    let s = calculate_length(&s1);
+    println!("The length of {s1} is {s} That kind thing, you suppose understand nahhhhh");
+
 
 }
 
@@ -31,3 +35,10 @@ fn main() {
 fn human_id(name: &str, age: u32, height: f32){
     println!("My name is {}, I'm {} of age and my height is {}", name, age, height);
 }
+fn calculate_length(s: &String) -> usize{
+    s.len()
+}
+//Today, I leant about some basic rules of Rust 
+//Each value in Rust has a variable that's its owner
+//There can be only one owner at a Time
+//When the owner goes out of scope the value is dropped
