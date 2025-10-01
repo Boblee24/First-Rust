@@ -29,6 +29,20 @@ fn main() {
     println!("The length of {s1} is {s} That kind thing, you suppose understand nahhhhh");
 
 
+    //Owner ship, borrowing and some other shit
+    let mut any_name: BankAccount = BankAccount {
+        owner: "Alice".to_string(),
+        balance: 160.04,
+    };
+
+    //Immutable borrow
+    any_name.check_balance();
+    //Muttable borrow
+    any_name.withdraw(30.03);
+    any_name.withdraw(33.03);
+
+    any_name.check_balance();
+
 }
 
 
@@ -42,3 +56,16 @@ fn calculate_length(s: &String) -> usize{
 //Each value in Rust has a variable that's its owner
 //There can be only one owner at a Time
 //When the owner goes out of scope the value is dropped
+struct BankAccount {
+    owner : String,
+    balance : f64,
+}
+impl BankAccount {
+    fn withdraw (&mut self, amount:f64) {
+        println!("Withdrawing {} from account owned by {} ", amount, self.owner);
+        self.balance -= amount;
+    }
+    fn check_balance(&self) {
+        println!("Amount owned by {} has a balance of {}", self.owner, self.balance);
+    }
+}
