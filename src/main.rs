@@ -86,3 +86,4 @@ fn main() {
     };
     print!("this is the result {result}");
 }
+//I was supposed to checkout enum today
