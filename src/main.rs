@@ -73,13 +73,13 @@
 // Now, Variable and Mutability
 
 
-//loop in Rustttttt
+//loop in Rusttttt SHALL WE
 fn main() {
     let mut favourite :u128 = 0;
 
     let result = loop {
         favourite += 1;
-
+ 
         if favourite == 10 {
             break favourite * 3
         }
